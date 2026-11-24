@@ -1,0 +1,12 @@
+package-as: MeioMail
+
+move-folders:
+  MeioMail/addons/MeioMail: MeioMail
+
+ignore:
+  - docs
+  - README.md
+
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown

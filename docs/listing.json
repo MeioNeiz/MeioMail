@@ -1,0 +1,16 @@
+{
+  "title": "Meio Mail",
+  "summary": "Remembers the mail you send: who to, what was in it and when, in a list beside the mailbox.",
+  "cfCategory": "Mail",
+  "cfExtra": [],
+  "wagoCategories": [
+    "Mail"
+  ],
+  "gallery": [
+    {
+      "file": "before-after.png",
+      "title": "Before and after",
+      "description": "The Send tab alone, then with your sent mail beside it and a row hovered"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# Meio Mail
+
+Remembers the mail you send: who to, what was in it and when, right beside the mailbox.
+
+![Before: the mailbox's Send tab on its own; with MeioMail, a list of the mail you sent
+beside it, and hovering a row shows the items and money in that mail](docs/before-after.png)
+
+## What it does
+
+At the mailbox's Send tab, a list of your sent mail, newest first. Handy for "did I already
+send those mats?" or "how much did I give my alt?".
+
+- Each row: who it went to, the item (or how many), money and COD, and when you sent it
+- Hover a row for everything in it: subject, each item and count, money
+- Only mail that really went out: a failed send isn't listed
+- Keeps your last 50 mails for 30 days, across all your characters
+
+Settings: Esc > Options > AddOns > MeioMail, or `/meiomail`.
+
+- `/sent`: the mail you sent, in chat
+- `/meiomail panel on|off`: the list beside the mailbox
+- `/meiomail clear`: forget the sent mail
+
+## Install
+
+Use your addon manager (CurseForge, Wago), or unzip a GitHub release into
+`World of Warcraft\_forever_\Interface\AddOns` and restart WoW fully.
+
+## Feedback
+
+Bugs and ideas: [GitHub issues](https://github.com/MeioNeiz/MeioMail/issues)
+
+## More Meio addons
+
+[Meio TrainerCompare](https://www.curseforge.com/wow/addons/trainercompare) | [Meio Next Stop](https://www.curseforge.com/wow/addons/leavebutton) | [Meio AutoRank](https://www.curseforge.com/wow/addons/meio-autorank) | [Meio MeterHover](https://www.curseforge.com/wow/addons/meterhover) | [Meio Map](https://addons.wago.io/addons/meiomap) | [Meio Alts](https://addons.wago.io/addons/meioalts) | [Meio DPS](https://addons.wago.io/addons/meiodps) | [Meio Plates](https://addons.wago.io/addons/meioplates) | [Meio Hub](https://addons.wago.io/addons/meiohub) | [Meio Pets](https://addons.wago.io/addons/meiopets) | [Meio Stats](https://addons.wago.io/addons/meiostats) | [Meio Bags](https://addons.wago.io/addons/meiobags) | [Meio Fixes](https://addons.wago.io/addons/meiofixes) | [Meio Flight Times](https://addons.wago.io/addons/meioflighttimes)
+
+## Licence
+
+[MIT](LICENSE)

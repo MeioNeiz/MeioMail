@@ -1,0 +1,15 @@
+## Interface: 16001
+## Title: MeioMail
+## Notes: Remembers the mail you send, beside the mailbox's Send tab and in /sent.
+## Version: 1.0.0
+## Author: MeioNeiz
+## X-Website: https://github.com/MeioNeiz/MeioMail
+## X-License: MIT
+## Category: Meio
+## IconTexture: Interface\Icons\INV_Letter_15
+## AddonCompartmentFunc: MeioMail_OnAddonCompartmentClick
+## SavedVariables: MeioMailDB
+
+MeioMail.lua
+Panel.lua
+Settings.lua
