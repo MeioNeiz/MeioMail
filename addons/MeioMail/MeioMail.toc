@@ -5,6 +5,8 @@
 ## Author: MeioNeiz
 ## X-Website: https://github.com/MeioNeiz/MeioMail
 ## X-License: MIT
+## X-Curse-Project-ID: 1829185
+## X-Wago-ID: QN5J4E6B
 ## Category: Meio
 ## IconTexture: Interface\Icons\INV_Letter_15
 ## AddonCompartmentFunc: MeioMail_OnAddonCompartmentClick
