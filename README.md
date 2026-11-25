@@ -24,6 +24,15 @@ Settings: Esc > Options > AddOns > MeioMail, or `/meiomail`.
 - `/meiomail panel on|off`: the list beside the mailbox
 - `/meiomail clear`: forget the sent mail
 
+## Coming soon
+
+- Attach an item and the subject fills itself again ("Linen Cloth (20)"), and C.O.D. works
+  again
+- Click a sent row to mail that person again
+
+![Coming soon: Send Mail with Linen Cloth attached and the subject filled in as Linen
+Cloth (20)](docs/soon.png)
+
 ## Install
 
 Use your addon manager (CurseForge, Wago), or unzip a GitHub release into
