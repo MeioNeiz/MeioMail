@@ -1,6 +1,6 @@
 {
   "title": "Meio Mail",
-  "summary": "Remembers the mail you send: who to, what was in it and when, in a list beside the mailbox.",
+  "summary": "Sent mail history beside the mailbox: who to, items, gold and when.",
   "cfCategory": "Mail",
   "cfExtra": [],
   "wagoCategories": [
