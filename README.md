@@ -4,8 +4,9 @@ Remembers the mail you send: who to, what was in it and when, right beside the m
 
 For WoW Forever.
 
-![Before: the mailbox's Send tab on its own; with MeioMail, a list of the mail you sent
-beside it, and hovering a row shows the items and money in that mail](docs/before-after.png)
+![Before: the mailbox's Send tab on its own; with Meio Mail, a list of the mail you sent
+beside it, one row sent from an alt, and the mouse on a row shows the boots and gold in
+that mail](docs/before-after.png)
 
 ## What it does
 
