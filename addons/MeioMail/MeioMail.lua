@@ -28,6 +28,33 @@ function M.Money(copper)
   return #parts > 0 and table.concat(parts, " ") or "|cffeda55f0c|r"
 end
 
+function M.Coins(copper)
+  local f = C_CurrencyInfo and C_CurrencyInfo.GetCoinTextureString or GetCoinTextureString
+  local ok, text = pcall(f, copper, 12)
+  if ok and type(text) == "string" and text ~= "" then return text end
+  return M.Money(copper)
+end
+
+function M.ItemIcon(it)
+  if it.icon then return it.icon end
+  local GetInstant = C_Item and C_Item.GetItemInfoInstant or GetItemInfoInstant
+  return GetInstant and select(5, GetInstant(it.link)) or 134400
+end
+
+function M.ItemQuality(it)
+  if it.q then return it.q end
+  local GetInfo = C_Item and C_Item.GetItemInfo or GetItemInfo
+  return GetInfo and select(3, GetInfo(it.link))
+end
+
+-- no brackets: they read as clickable, and these aren't
+function M.ItemName(it)
+  local name = it.link:match("|h%[(.-)%]|h") or it.link
+  local q = M.ItemQuality(it)
+  local c = q and ITEM_QUALITY_COLORS and ITEM_QUALITY_COLORS[q]
+  return c and c.hex and (c.hex .. name .. "|r") or name
+end
+
 local function When(t, now)
   if now - t < 20 * 3600 then return date("%H:%M", t) --[[@as string]] end
   return date("%d %b %H:%M", t) --[[@as string]]
@@ -80,10 +107,10 @@ hooksecurefunc("SendMail", function(to, subject)
     money = cod > 0 and 0 or (GetSendMailMoney() or 0), cod = cod,
   }
   for i = 1, ATTACHMENTS_MAX_SEND or 12 do
-    local name, _, _, count = GetSendMailItem(i)
+    local name, _, icon, count, quality = GetSendMailItem(i)
     if name then
       local link = GetSendMailItemLink and GetSendMailItemLink(i)
-      m.items[#m.items + 1] = { link = link or name, count = count or 1 }
+      m.items[#m.items + 1] = { link = link or name, count = count or 1, icon = icon, q = quality }
     end
   end
   sending = m
@@ -130,6 +157,8 @@ local function Help()
     "  |cffffd100/meiomail list|r - the mail you sent (also |cffffd100/sent|r)",
     "  |cffffd100/meiomail panel on||off|r - sent mail beside the mailbox's Send tab"
       .. Now(M.db.panel ~= false),
+    "  |cffffd100/meiomail subject on||off|r - an empty subject fills from the item or money"
+      .. Now(M.db.subject ~= false),
     "  |cffffd100/meiomail clear|r - forget the sent mail",
     "  Settings: Esc > Options > AddOns > MeioMail (|cffffd100/meiomail settings|r)",
   }) do Line(l) end
@@ -154,6 +183,11 @@ local function Command(msg)
     local on = M.db.panel ~= false
     if arg == "on" then on = true elseif arg == "off" then on = false else on = not on end
     M.SetPanel(on)
+  elseif cmd == "subject" then
+    local on = M.db.subject ~= false
+    if arg == "on" then on = true elseif arg == "off" then on = false else on = not on end
+    M.db.subject = on
+    Print("subject from item or money " .. (on and "|cff80ff80on|r" or "|cffff8080off|r"))
   elseif cmd == "clear" then
     wipe(M.db.sent)
     Print("sent mail forgotten")
@@ -190,6 +224,7 @@ local handlers = {
       M.db.chars = nil
       for _, m in ipairs(M.db.sent) do m.arrives, m.own = nil, nil end
       if M.db.panel == nil then M.db.panel = true end
+      if M.db.subject == nil then M.db.subject = true end
       Prune()
     end
     if M.OnAddonLoaded then M.OnAddonLoaded(name) end

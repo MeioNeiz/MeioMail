@@ -1,6 +1,6 @@
 {
   "title": "Meio Mail",
-  "summary": "Sent mail history beside the mailbox: who to, items, gold and when.",
+  "summary": "Fills the empty mail subject again and keeps every mail you send beside the mailbox.",
   "cfCategory": "Mail",
   "cfExtra": [],
   "wagoCategories": [
@@ -10,7 +10,7 @@
     {
       "file": "before-after.png",
       "title": "Before and after",
-      "description": "The Send tab alone, then your sent mail beside it, alts' mail too, with a row hovered"
+      "description": "Before: item attached, empty subject, Send greyed. With Meio Mail: subject filled, Send works, your sent mail beside it with a row hovered"
     }
   ]
 }

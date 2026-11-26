@@ -14,6 +14,11 @@ function M.RegisterSettings()
   if panel.SetValueChangedCallback then
     panel:SetValueChangedCallback(function() M.Changed() end)
   end
+  local subject = Settings.RegisterAddOnSetting(category, "MEIOMAIL_SUBJECT", "subject", M.db,
+    Settings.VarType.Boolean, "Fill the subject", true)
+  Settings.CreateCheckbox(category, subject, "An empty subject fills with the item you "
+    .. "attach (Linen Cloth (20)), as the mailbox used to, or the money you send (5g), so "
+    .. "Send works without typing one. /meiomail subject on||off")
   if CreateSettingsButtonInitializer and layout then
     layout:AddInitializer(CreateSettingsButtonInitializer("Sent mail", "List in chat",
       function() M.List() end, "Prints the mail you sent. /sent", true))
